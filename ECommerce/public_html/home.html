@@ -13,17 +13,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         background-image: url('assets/test.jpg');
         background-size: cover;
         height: 850px;
-        
+        border-radius: 80px 60px;
     }
     
     .bg_img_title {
         color: #ff9966;
-        font-size: 130px;
+        font-size: 120px;
         font-weight: 800;
-        padding-left: 5%;
-        padding-top: 7%;
+        font-style: italic;
+        padding: 0px 40px 0px 10px;
         text-shadow: 6px 6px 7px #e6005c;
         font-family: 'Share Tech Mono', monospace;
+        background-image: 
+          repeating-linear-gradient(
+            45deg,
+            #85FFBD,
+            #85FFBD 10px,
+            #FFFB7D 10px,
+            #FFFB7D 20px 
+          );
+        position: absolute;
+        left: 3%;
+        top: 20%;
+        border-radius: 15px 50px 30px;
     }
     
     .section1 {
@@ -98,8 +110,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Lobster&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="seperator"></div>
         <div class="bg_img_header">
-            <h1 class="bg_img_title">Cafe Bloom</h1>
+            <span class="bg_img_title">Cafe Bloom</span>
         </div>
         <div class="seperator"></div>
         <div class="section1">
