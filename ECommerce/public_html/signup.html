@@ -41,7 +41,10 @@ and open the template in the editor.
 
     }
     
-    
+    select {
+        padding: 5px 112px 5px 15px;
+        font-size: 15px;
+    }
     
     .navigator_tab {
         text-decoration: none;
@@ -83,7 +86,11 @@ and open the template in the editor.
                 var count = document.getElementById('count');
                 var pwd = document.getElementById('pwd');
                 var confirm_pwd = document.getElementById('confirm_pwd');
+                var gender1 = document.getElementById('gender1');
+                var gender2 = document.getElementById('gender2');
+                var checkboxterms = document.getElementById('checkboxterms');
                 var letters = /^[A-Za-z]+$/;
+                document.write("Successfully Registered");
                 /*document.write(name.value);
                 document.write(phone_num.value);
                 document.write(email_id.value);
@@ -119,12 +126,9 @@ and open the template in the editor.
                     return false;
                 }
                 
-                //validation for count
-                if(isNaN(count.value) || count.value < 4)
-                {
-                    alert('Minimum 5 count of people is required for a reservation.');
-                    count.value = '';
-                    count.focus();
+                //validation for gender
+                if(gender1.checked == false && gender2.checked == false) {
+                    alert('Please select a gender');
                     return false;
                 }
                 
@@ -145,6 +149,12 @@ and open the template in the editor.
                     confirm_pwd.focus();
                     return false;
                 }
+                
+                //validation for terms and conditions
+                if(checkboxterms.checked == false) {
+                    alert('Please accept the terms and conditions');
+                    return false;
+                }
             }
             
         </script>
@@ -153,7 +163,7 @@ and open the template in the editor.
         <div class="container">
             <form onsubmit='return validation()' action="reservation_form.html">
                 <table cellspacing='15px' border='0'>
-                    <caption>Sign Up</caption>
+                    <caption>Registration Form</caption>
                     <tr>
                         <td>
                             <label>Name: </label>
@@ -178,12 +188,21 @@ and open the template in the editor.
                             <input type='text' id='email_id' placeholder='abc@gmail.com' >
                         </td>
                     </tr>
-                    <tr>
+<!--                    <tr>
                         <td>
                             <label>Number of People: </label>
                         </td>
                         <td>
                             <input type='text' id='count' >
+                        </td>
+                    </tr>-->
+                    <tr>
+                        <td>
+                            <label>Gender</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="gender" id="gender1" value="Male"/><label>Male</label>
+                            <input type="radio" name="gender" id="gender2" value="Female"/><label>Female</label>
                         </td>
                     </tr>
                     <tr>
@@ -201,6 +220,20 @@ and open the template in the editor.
                         <td>
                             <input type='password' id='confirm_pwd' >
                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Select a country: </label>
+                        </td>
+                        <td>
+                            <select>
+                                <option>India</option>
+                                <option>America</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="checkbox" id="checkboxterms"/><label>I agree with the terms and conditions</label></td>
                     </tr>
                 </table>
                 <button type="submit" >SUBMIT</button>
